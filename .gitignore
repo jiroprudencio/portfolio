@@ -22,3 +22,15 @@ Thumbs.db
 # Vercel & Supabase
 .vercel/
 supabase/.temp/
+
+# Raw Data (Security & Privacy)
+data/
+app_build/data/
+*.pdf
+*.xlsx
+*.csv
+*.json.bak
+*.scratch
+/scratch/
+.agents/scratch/
+
