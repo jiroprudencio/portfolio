@@ -10,7 +10,7 @@ import { staggerContainer, fadeInUp } from '@/lib/motion';
 
 export default function AthleticsDashboard() {
   // States
-  const [activeFilter, setActiveFilter] = useState<string>('100m');
+  const [activeFilter, setActiveFilter] = useState<string>('400m');
 
   // Extract all unique disciplines for the filter menu
   const disciplines = useMemo(() => {
@@ -105,7 +105,7 @@ export default function AthleticsDashboard() {
                 Multi-Event Overview Active
               </h3>
               <p className="text-text-muted text-sm max-w-md">
-                To view a detailed performance progression timeline, please select a specific event like 100m or 200m from the filter tabs above.
+                To view a detailed performance progression timeline, please select a specific event like 400m or 100m from the filter tabs above.
               </p>
             </div>
           ) : (

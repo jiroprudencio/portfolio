@@ -1,36 +1,31 @@
 import type { Experience } from '@/types';
 
-/**
- * TODO: Replace all placeholder entries with actual resume data.
- * Pull from data/resume.pdf once parsed.
- */
-
 export const experiences: readonly Experience[] = [
   {
-    company: 'TechCorp Analytics', // TODO: replace with actual company
-    role: 'Data Scientist',
-    startDate: '2024-06-01',
-    endDate: undefined, // Current role
+    company: 'Singapore Armed Forces',
+    role: 'Admin Support Assistant',
+    startDate: '2024-07-01',
+    endDate: '2026-07-31',
     description:
-      'Developed end-to-end NLP pipelines for sentiment analysis across multilingual customer feedback. Built internal dashboards using Next.js and Recharts to surface model performance metrics to non-technical stakeholders. Reduced model inference latency by 40% through quantisation and caching strategies.',
-    technologies: ['Python', 'scikit-learn', 'Next.js', 'PostgreSQL', 'Docker'],
+      'Digitised and reformatted records to improve data integrity and readability, maintaining documentation accuracy across the unit. Designed and documented new standard operating procedures for depot clerks, streamlining knowledge transfer and reducing onboarding time for incoming personnel. Managed daily operational reporting (parade state, logistics checks).',
+    technologies: ['Microsoft Excel', 'Data Analysis', 'Data Modelling'],
   },
   {
-    company: 'DataWave Solutions', // TODO: replace with actual company
-    role: 'Machine Learning Engineer Intern',
-    startDate: '2023-05-01',
-    endDate: '2024-05-31',
+    company: 'AsiaOne Online Pte. Ltd.',
+    role: 'Data Science Apprentice',
+    startDate: '2023-09-01',
+    endDate: '2024-06-30',
     description:
-      'Designed and trained classification models for financial transaction anomaly detection. Collaborated with backend engineers to deploy models as REST APIs using FastAPI. Automated data quality checks that caught 15% more schema drift incidents than the previous manual process.',
-    technologies: ['Python', 'pandas', 'NumPy', 'FastAPI', 'SQL', 'Git'],
+      'Built an end-to-end social listening model and pipeline to conduct user behaviour analysis (semantic analysis through NLU) on unstructured social media comments, applying NLP, NLU, and GenAI techniques, including Singlish translation, topic modelling, and attribute extraction. Played a pivotal role as 1 of 2 data scientists in a 5-member team to achieve the Innovation Award at Google AI Trailblazers Initiative (only SME awarded out of 100). Earned the Silver Winner for AI-assisted Social Listening at WAN-IFRA\'s Digital Media Awards Asia 2025. Model was deployed in a live GE2025 news article, analysing 647,585 comments.',
+    technologies: ['Python', 'NLP', 'NLU', 'GenAI', 'SQL', 'Data Pipelines'],
   },
   {
-    company: 'Freelance', // TODO: replace with actual company or remove
-    role: 'Full-Stack Developer',
-    startDate: '2022-01-01',
-    endDate: '2023-04-30',
+    company: 'PVH Singapore Pte. Ltd.',
+    role: 'Part-Time Retail Sales Associate in Tommy Hilfiger',
+    startDate: '2019-11-01',
+    endDate: '2020-03-31',
     description:
-      'Built responsive web applications for small businesses using React and Next.js. Integrated Supabase for authentication and real-time data. Delivered three client projects on time with 100% satisfaction rating.',
-    technologies: ['TypeScript', 'React', 'Next.js', 'Supabase', 'Tailwind CSS'],
+      'Delivered personalised customer service, upheld visual merchandising standards, and consistently contributed to monthly team sales targets through effective upselling and cross-selling.',
+    technologies: ['Customer Service', 'Sales', 'Communication'],
   },
 ] as const;
