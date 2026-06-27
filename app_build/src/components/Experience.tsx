@@ -67,9 +67,9 @@ export default function Experience() {
                   </p>
 
                   {/* Tech Badges */}
-                  {exp.technologies && exp.technologies.length > 0 && (
+                  {exp.skills && exp.skills.length > 0 && (
                     <div className="mt-4 flex flex-wrap gap-2">
-                      {exp.technologies.map((tech: string) => (
+                      {exp.skills.map((tech: string) => (
                         <span
                           key={tech}
                           className="rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/5 px-3 py-1 text-xs font-medium text-[var(--accent)]"

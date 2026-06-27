@@ -26,14 +26,14 @@ export default function AthleticsDashboard() {
     return performanceRecords.filter((r) => r.discipline === activeFilter);
   }, [activeFilter]);
 
-  // Personal Bests
+  // Personal Bests (Static: 400m, 200m, 100m - not affected by filter)
   const personalBests = useMemo(() => {
     const pbs = getPersonalBests();
-    if (activeFilter === 'All') {
-      return pbs;
-    }
-    return pbs.filter((pb) => pb.discipline === activeFilter);
-  }, [activeFilter]);
+    const targets = ['400m', '200m', '100m'];
+    return targets
+      .map((t) => pbs.find((pb) => pb.discipline === t))
+      .filter((pb): pb is Exclude<typeof pb, undefined> => !!pb);
+  }, []);
 
   return (
     <section id="athletics" className="py-20 relative overflow-hidden">

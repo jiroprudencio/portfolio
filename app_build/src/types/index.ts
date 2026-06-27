@@ -30,7 +30,7 @@ export interface Experience {
   readonly startDate: string; // ISO date string
   readonly endDate?: string; // undefined = current role
   readonly description: string;
-  readonly technologies: readonly string[];
+  readonly skills: readonly string[];
 }
 
 /** Education entry */
@@ -47,10 +47,9 @@ export interface Education {
 export interface Project {
   readonly title: string;
   readonly description: string;
-  readonly technologies: readonly string[];
+  readonly skills: readonly string[];
   readonly githubUrl?: string;
   readonly liveUrl?: string;
-  readonly imageUrl?: string;
 }
 
 /** Skill category union type */
@@ -117,4 +116,13 @@ export interface Discipline {
   /** Display unit, e.g. "seconds" */
   readonly unit: string;
   readonly records: readonly PerformanceRecord[];
+}
+
+export interface Award {
+  readonly title: string;
+  readonly associated_with: string;
+  readonly issuer: string;
+  readonly issue_date: string; // "Month Year"
+  readonly description: string;
+  readonly media?: string;
 }

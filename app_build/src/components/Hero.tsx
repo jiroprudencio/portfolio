@@ -69,10 +69,10 @@ export default function Hero() {
           className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
           <button
-            onClick={() => handleScroll('#projects')}
+            onClick={() => handleScroll('#experience')}
             className="rounded-full bg-[var(--accent)] px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-[var(--accent-hover,#2563eb)]"
           >
-            View My Work
+            Explore Experience
           </button>
           <button
             onClick={() => handleScroll('#athletics')}

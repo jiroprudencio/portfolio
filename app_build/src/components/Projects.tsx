@@ -51,7 +51,7 @@ export default function Projects() {
 
               {/* Tech Badges */}
               <div className="mt-4 flex flex-wrap gap-2">
-                {project.technologies.map((tech: string) => (
+                {(project.skills ?? []).map((tech: string) => (
                   <span
                     key={tech}
                     className="rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/5 px-3 py-1 text-xs font-medium text-[var(--accent)]"
