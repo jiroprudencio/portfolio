@@ -1,0 +1,197 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Constellation Design System — CSS Custom Properties
+   ============================================================ */
+
+:root {
+  /* Backgrounds */
+  --bg-deep: #0a0a0f;
+  --bg-surface: #12121a;
+  --bg-elevated: #1a1a25;
+
+  /* Text */
+  --text-primary: #f8f8f8;
+  --text-muted: #a0a0b0;
+  --text-dim: #606070;
+
+  /* Accent */
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --accent-glow: rgba(59, 130, 246, 0.2);
+
+  /* Gold (Personal Bests) */
+  --gold: #fbbf24;
+  --gold-glow: rgba(251, 191, 36, 0.3);
+
+  /* Chart tokens */
+  --node: #f8f8f8;
+  --line: rgba(248, 248, 248, 0.15);
+
+  /* Borders */
+  --border: rgba(248, 248, 248, 0.08);
+
+  /* shadcn/ui compatibility overrides */
+  --background: var(--bg-deep);
+  --foreground: var(--text-primary);
+  --card: var(--bg-surface);
+  --card-foreground: var(--text-primary);
+  --popover: var(--bg-elevated);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--accent);
+  --primary-foreground: #ffffff;
+  --secondary: var(--bg-surface);
+  --secondary-foreground: var(--text-primary);
+  --muted: var(--bg-surface);
+  --muted-foreground: var(--text-muted);
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --ring: var(--accent);
+  --radius: 0.5rem;
+}
+
+/* ============================================================
+   Tailwind v4 @theme inline — maps CSS vars to Tailwind tokens
+   ============================================================ */
+
+@theme inline {
+  --color-bg-deep: var(--bg-deep);
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-text-primary: var(--text-primary);
+  --color-text-muted: var(--text-muted);
+  --color-text-dim: var(--text-dim);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-glow: var(--accent-glow);
+  --color-gold: var(--gold);
+  --color-gold-glow: var(--gold-glow);
+  --color-node: var(--node);
+  --color-line: var(--line);
+  --color-border: var(--border);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-inter);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* ============================================================
+   Base Styles
+   ============================================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  min-height: 100dvh;
+
+  /* --------------------------------------------------------
+     CSS-only Starfield Background
+     ~30 radial-gradient star dots at varying positions & opacities
+     -------------------------------------------------------- */
+  background-image:
+    /* Row 1 — scattered across top */
+    radial-gradient(1px 1px at 3% 7%, rgba(255, 255, 255, 0.55) 0%, transparent 100%),
+    radial-gradient(1px 1px at 12% 18%, rgba(255, 255, 255, 0.40) 0%, transparent 100%),
+    radial-gradient(1px 1px at 22% 4%, rgba(255, 255, 255, 0.65) 0%, transparent 100%),
+    radial-gradient(1px 1px at 35% 12%, rgba(255, 255, 255, 0.30) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 48% 8%, rgba(255, 255, 255, 0.70) 0%, transparent 100%),
+    radial-gradient(1px 1px at 58% 15%, rgba(255, 255, 255, 0.45) 0%, transparent 100%),
+    radial-gradient(1px 1px at 72% 6%, rgba(255, 255, 255, 0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 85% 20%, rgba(255, 255, 255, 0.50) 0%, transparent 100%),
+    radial-gradient(1px 1px at 95% 3%, rgba(255, 255, 255, 0.40) 0%, transparent 100%),
+    /* Row 2 — upper-mid band */
+    radial-gradient(1px 1px at 8% 32%, rgba(255, 255, 255, 0.50) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 18% 42%, rgba(255, 255, 255, 0.60) 0%, transparent 100%),
+    radial-gradient(1px 1px at 28% 38%, rgba(255, 255, 255, 0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 42% 28%, rgba(255, 255, 255, 0.45) 0%, transparent 100%),
+    radial-gradient(1px 1px at 55% 45%, rgba(255, 255, 255, 0.30) 0%, transparent 100%),
+    radial-gradient(1px 1px at 65% 35%, rgba(255, 255, 255, 0.55) 0%, transparent 100%),
+    radial-gradient(1px 1px at 78% 48%, rgba(255, 255, 255, 0.40) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 92% 30%, rgba(255, 255, 255, 0.65) 0%, transparent 100%),
+    /* Row 3 — mid band */
+    radial-gradient(1px 1px at 5% 55%, rgba(255, 255, 255, 0.45) 0%, transparent 100%),
+    radial-gradient(1px 1px at 15% 62%, rgba(255, 255, 255, 0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 32% 58%, rgba(255, 255, 255, 0.50) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 50% 65%, rgba(255, 255, 255, 0.60) 0%, transparent 100%),
+    radial-gradient(1px 1px at 68% 52%, rgba(255, 255, 255, 0.40) 0%, transparent 100%),
+    radial-gradient(1px 1px at 82% 60%, rgba(255, 255, 255, 0.30) 0%, transparent 100%),
+    /* Row 4 — lower band */
+    radial-gradient(1px 1px at 10% 75%, rgba(255, 255, 255, 0.55) 0%, transparent 100%),
+    radial-gradient(1px 1px at 25% 82%, rgba(255, 255, 255, 0.40) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 38% 78%, rgba(255, 255, 255, 0.70) 0%, transparent 100%),
+    radial-gradient(1px 1px at 52% 85%, rgba(255, 255, 255, 0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 72%, rgba(255, 255, 255, 0.50) 0%, transparent 100%),
+    radial-gradient(1px 1px at 88% 80%, rgba(255, 255, 255, 0.45) 0%, transparent 100%),
+    /* Row 5 — bottom edge */
+    radial-gradient(1px 1px at 6% 92%, rgba(255, 255, 255, 0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 45% 95%, rgba(255, 255, 255, 0.50) 0%, transparent 100%),
+    radial-gradient(1px 1px at 78% 90%, rgba(255, 255, 255, 0.40) 0%, transparent 100%),
+    radial-gradient(1px 1px at 96% 88%, rgba(255, 255, 255, 0.55) 0%, transparent 100%);
+}
+
+/* ============================================================
+   Custom Scrollbar — Dark theme
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-dim);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--text-dim) var(--bg-deep);
+}
+
+/* ============================================================
+   Selection
+   ============================================================ */
+
+::selection {
+  background: var(--accent-glow);
+  color: var(--text-primary);
+}
+
+/* ============================================================
+   Focus Visible — Constellation accent ring
+   ============================================================ */
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
